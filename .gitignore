@@ -1,3 +1,9 @@
 **/bin/**
 **/obj/**
 **/packages/**
+/IgorKL.Customization/.vs
+/IgorKL.Customization/*.user
+.vs
+v17
+*.suo
+/.vs/IgorKL.ACAD3.Model/v17/.suo
