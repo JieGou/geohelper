@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -16,7 +16,9 @@ using wnd = System.Windows.Forms;
 using IgorKL.ACAD3.Model.Extensions;
 
 namespace IgorKL.ACAD3.Model.Commands {
+
     public class MLeaderCmd {
+
         [RibbonCommandButton("Копировать текст", "Текст/Аннотации")]
         [Autodesk.AutoCAD.Runtime.CommandMethod("iCmd_CopyMLeaderTextContext", Autodesk.AutoCAD.Runtime.CommandFlags.UsePickSet)]
         public static void CopyMLeaderTextContext() {
@@ -50,7 +52,6 @@ namespace IgorKL.ACAD3.Model.Commands {
             if (!ObjectCollector.TrySelectObjects(out selectedTexts, "\nВыберите исходный массив: "))
                 return;
 
-
             double textHeight = 0;
             Tools.StartTransaction(() => {
                 textHeight = sourceObj.Id.GetObjectForRead<DBText>(false).Height;
@@ -82,17 +83,17 @@ namespace IgorKL.ACAD3.Model.Commands {
             });
         }
 
+        /// <summary>
+        /// 文字包围盒
+        /// </summary>
         [RibbonCommandButton("Рамка текста", RibbonPanelCategories.Text_Annotations)]
         [Autodesk.AutoCAD.Runtime.CommandMethod("iCmd_AddBboxToText", Autodesk.AutoCAD.Runtime.CommandFlags.UsePickSet)]
         public static void AddBboxToText() {
-
-            List<DBText> textItems;
-            if (!ObjectCollector.TrySelectObjects<DBText>(out textItems, "\nВыберите текстовые объекты")) {
+            if (!ObjectCollector.TrySelectObjects<DBText>(out List<DBText> textItems, "\nSelect text objects")) {
                 return;
             }
 
             Tools.UseTransaction((Transaction trans, BlockTable acBlkTbl, BlockTableRecord acBlkTblRec) => {
-
                 foreach (DBText text in textItems) {
                     DBText db_text = trans.GetObject(text.Id, OpenMode.ForRead) as DBText;
                     var bounds = db_text.GetTextBoxCorners();
@@ -130,7 +131,6 @@ namespace IgorKL.ACAD3.Model.Commands {
                 }
 
                 trans.Commit();
-
             });
         }
 
@@ -156,9 +156,7 @@ namespace IgorKL.ACAD3.Model.Commands {
             }
             double dh = valueResult.Value;
 
-
             Tools.UseTransaction((Transaction trans, BlockTable acBlkTbl, BlockTableRecord acBlkTblRec) => {
-
                 foreach (DBText text in textItems) {
                     DBText db_text = trans.GetObject(text.Id, OpenMode.ForWrite) as DBText;
                     double textVal;
@@ -171,7 +169,6 @@ namespace IgorKL.ACAD3.Model.Commands {
                 }
 
                 trans.Commit();
-
             });
 
             valueOption = new PromptDoubleOptions("\nВведите значение множителя") {
@@ -186,7 +183,6 @@ namespace IgorKL.ACAD3.Model.Commands {
             double xh = valueResult.Value;
 
             Tools.UseTransaction((Transaction trans, BlockTable acBlkTbl, BlockTableRecord acBlkTblRec) => {
-
                 foreach (DBText text in textItems) {
                     DBText db_text = trans.GetObject(text.Id, OpenMode.ForWrite) as DBText;
                     double textVal;
@@ -199,7 +195,6 @@ namespace IgorKL.ACAD3.Model.Commands {
                 }
 
                 trans.Commit();
-
             });
         }
     }
