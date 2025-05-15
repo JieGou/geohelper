@@ -86,24 +86,30 @@
     <Reference Include="accoremgd, Version=21.0.0.0, Culture=neutral, processorArchitecture=AMD64">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\reference\acad\accoremgd.dll</HintPath>
+      <Private>False</Private>
     </Reference>
     <Reference Include="AcCui, Version=21.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\reference\acad\AcCui.dll</HintPath>
+      <Private>False</Private>
     </Reference>
     <Reference Include="acdbmgd">
       <HintPath>..\reference\acad\acdbmgd.dll</HintPath>
+      <Private>False</Private>
     </Reference>
     <Reference Include="acmgd, Version=21.0.0.0, Culture=neutral, processorArchitecture=AMD64">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\reference\acad\acmgd.dll</HintPath>
+      <Private>False</Private>
     </Reference>
     <Reference Include="AcWindows, Version=21.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\reference\acad\AcWindows.dll</HintPath>
+      <Private>False</Private>
     </Reference>
     <Reference Include="AdWindows">
       <HintPath>..\reference\acad\AdWindows.dll</HintPath>
+      <Private>False</Private>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core">

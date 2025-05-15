@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -56,7 +56,7 @@ namespace IgorKL.ACAD3.Model.Commands {
 
             Point3d insertPoint = new Point3d(0, 0, 0);
 
-            PromptPointOptions ppo = new PromptPointOptions("\nУкажите втору точку");
+            PromptPointOptions ppo = new PromptPointOptions("\nIndicate the second point");
             ppo.BasePoint = insertPoint;
             ppo.UseDashedLine = true;
             ppo.UseBasePoint = true;
@@ -67,7 +67,7 @@ namespace IgorKL.ACAD3.Model.Commands {
 
             var res = adHorizontal.PastNewArrowItem(insertPoint, ppr.Value);
 
-            ppo = new PromptPointOptions("\nУкажите сторону отрисовки");
+            ppo = new PromptPointOptions("\nIndicate the side of the drawing");
             ppo.BasePoint = insertPoint;
             ppo.UseDashedLine = true;
             ppo.UseBasePoint = true;

@@ -1,3 +1,14 @@
 **/bin/**
 **/obj/**
 **/packages/**
+/IgorKL.Customization/.vs
+/IgorKL.ACAD3.Model/.vs
+.vs
+IgorKL.ACAD3.Customization.csproj.user
+/.vs
+IgorKL.ACAD3.Model
+v17
+/IgorKL.ACAD3.Model/IgorKL.ACAD3.Model.csproj.user
+/IgorKL.ACAD3.Model/IgorKL.ACAD3.Model.csproj.vspscc
+/IgorKL.Customization/IgorKL.ACAD3.Customization.csproj.user
+/IgorKL.Customization/IgorKL.ACAD3.Customization.csproj.vspscc

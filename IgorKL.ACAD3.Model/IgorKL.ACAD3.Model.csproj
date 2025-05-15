@@ -96,6 +96,7 @@
     </Reference>
     <Reference Include="acdbmgdbrep">
       <HintPath>..\reference\acad\acdbmgdbrep.dll</HintPath>
+      <Private>False</Private>
     </Reference>
     <Reference Include="acmgd, Version=20.0.0.0, Culture=neutral, processorArchitecture=AMD64">
       <SpecificVersion>False</SpecificVersion>
